@@ -1,12 +1,12 @@
 {
-  "name": "theme-kimi-101",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "start": "salla theme watch",
-    "build": "salla theme build"
-  },
-  "devDependencies": {
-    "@salla.sa/twilight-cli": "^1.2.0"
-  }
+	"name": "theme-kimi-101",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"start": "salla theme watch",
+		"build": "salla theme build"
+	},
+	"devDependencies": {
+		"@salla.sa/twilight-cli": "^1.2.0"
+	}
 }
