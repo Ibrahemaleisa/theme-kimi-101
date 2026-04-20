@@ -1,0 +1,21 @@
+{
+  "current": "Default",
+  "presets": {
+    "Default": {
+      "color_bg": "#0a0a0a",
+      "color_surface": "#141414",
+      "color_text": "#ffffff",
+      "color_text_muted": "#888888",
+      "color_accent": "#c9a962",
+      "color_border": "#2a2a2a",
+      "font_heading": "Playfair Display",
+      "font_body": "Inter",
+      "show_hero": true,
+      "hero_title": "Define Your Elegance",
+      "hero_subtitle": "Curated luxury for the modern connoisseur",
+      "hero_button_text": "Explore Collection",
+      "show_featured": true,
+      "featured_limit": 8
+    }
+  }
+}

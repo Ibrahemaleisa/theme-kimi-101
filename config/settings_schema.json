@@ -1,0 +1,134 @@
+{
+  "name": "Luxury Dark",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Brand Identity"
+    },
+    {
+      "type": "image",
+      "id": "logo",
+      "label": "Logo",
+      "info": "PNG with transparent background recommended"
+    },
+    {
+      "type": "image",
+      "id": "favicon",
+      "label": "Favicon"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": "Background",
+      "default": "#0a0a0a"
+    },
+    {
+      "type": "color",
+      "id": "color_surface",
+      "label": "Surface",
+      "default": "#141414"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Text Primary",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "color_text_muted",
+      "label": "Text Muted",
+      "default": "#888888"
+    },
+    {
+      "type": "color",
+      "id": "color_accent",
+      "label": "Accent",
+      "default": "#c9a962"
+    },
+    {
+      "type": "color",
+      "id": "color_border",
+      "label": "Border",
+      "default": "#2a2a2a"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font",
+      "id": "font_heading",
+      "label": "Heading Font",
+      "default": "Inter"
+    },
+    {
+      "type": "font",
+      "id": "font_body",
+      "label": "Body Font",
+      "default": "Inter"
+    },
+    {
+      "type": "header",
+      "content": "Homepage"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_hero",
+      "label": "Show Hero Section",
+      "default": true
+    },
+    {
+      "type": "image",
+      "id": "hero_image",
+      "label": "Hero Background"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Hero Title",
+      "default": "Define Your Elegance"
+    },
+    {
+      "type": "text",
+      "id": "hero_subtitle",
+      "label": "Hero Subtitle",
+      "default": "Curated luxury for the modern connoisseur"
+    },
+    {
+      "type": "url",
+      "id": "hero_button_link",
+      "label": "Hero Button Link"
+    },
+    {
+      "type": "text",
+      "id": "hero_button_text",
+      "label": "Hero Button Text",
+      "default": "Explore Collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_featured",
+      "label": "Show Featured Products",
+      "default": true
+    },
+    {
+      "type": "collection",
+      "id": "featured_collection",
+      "label": "Featured Collection"
+    },
+    {
+      "type": "range",
+      "id": "featured_limit",
+      "label": "Products to show",
+      "min": 4,
+      "max": 12,
+      "step": 2,
+      "default": 8
+    }
+  ]
+}
