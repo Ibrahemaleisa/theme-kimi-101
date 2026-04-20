@@ -1,0 +1,7 @@
+{
+  "name": "theme-kimi-101",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@salla.sa/twilight-cli": "^1.0.0"
+  }
+}
