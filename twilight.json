@@ -1,6 +1,8 @@
 {
-"name": "Kimi Theme",
-"unique_name": "theme-kimi-101",
-"version": "1.0.0",
-"author": "Ibrahim"
+  "name": "Kimi Theme",
+  "unique_name": "theme-kimi-101",
+  "version": "1.0.0",
+  "author": "Ibrahim Aleisa",
+  "theme_type": "store",
+  "services": []
 }
