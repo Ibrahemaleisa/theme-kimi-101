@@ -1,7 +1,12 @@
 {
+  "name": "theme-kimi-101",
   "version": "1.0.0",
-  "theme_name": "Theme One",
-  "repo_url": "https://github.com/Ibrahemaleisa/theme-kimi-101",
-  "support_url": "https://salla.dev"
-  ...
+  "private": true,
+  "scripts": {
+    "start": "salla theme watch",
+    "build": "salla theme build"
+  },
+  "devDependencies": {
+    "@salla.sa/twilight-cli": "^1.2.0"
+  }
 }
