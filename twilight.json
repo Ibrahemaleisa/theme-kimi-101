@@ -1,8 +1,9 @@
 {
   "name": "Kimi Theme",
-  "unique_name": "theme-kimi-101",
-  "description": "Dark, Edgy, and High-End Streetwear Theme",
+  "unique_name": "theme_kimi_101",
+  "description": "High-end Streetwear Theme",
   "version": "1.0.0",
   "author": "Ibrahim Aleisa",
+  "theme_type": "store",
   "services": []
 }
