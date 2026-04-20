@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="{{ locale }}" dir="{{ dir }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_title }}{% if current_page != 1 %} - Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} | {{ shop.name }}{% endunless %}</title>
+  
+  {% if settings.favicon %}
+    <link rel="icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
+  {% endif %}
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+  {{ content_for_header }}
+  
+  <style>
+    :root {
+      --color-bg: {{ settings.color_bg | default: '#0a0a0a' }};
+      --color-surface: {{ settings.color_surface | default: '#141414' }};
+      --color-text: {{ settings.color_text | default: '#ffffff' }};
+      --color-text-muted: {{ settings.color_text_muted | default: '#888888' }};
+      --color-accent: {{ settings.color_accent | default: '#c9a962' }};
+      --color-border: {{ settings.color_border | default: '#2a2a2a' }};
+      --font-heading: {{ settings.font_heading | default: 'Playfair Display' }}, serif;
+      --font-body: {{ settings.font_body | default: 'Inter' }}, sans-serif;
+    }
+  </style>
+</head>
+<body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}">
+  {% section 'header' %}
+  
+  <main id="MainContent" class="main-content" role="main" tabindex="-1">
+    {{ content_for_layout }}
+  </main>
+  
+  {% section 'footer' %}
+  
+  {{ 'theme.js' | asset_url | script_tag }}
+</body>
+</html>
