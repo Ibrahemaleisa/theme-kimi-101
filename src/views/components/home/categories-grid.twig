@@ -1,0 +1,19 @@
+<section class="section section-categories" data-animate="fade-up">
+  <div class="container">
+    <h2 class="section-title centered">Browse by Category</h2>
+    <div class="category-grid">
+      {% for category in categories|slice(0, 3) %}
+        <a href="{{ category.url }}" class="category-card">
+          <div class="category-image">
+            {% if category.image %}
+              <img src="{{ category.image }}" alt="{{ category.name }}" loading="lazy">
+            {% else %}
+              <div class="category-placeholder"></div>
+            {% endif %}
+          </div>
+          <h3 class="category-title">{{ category.name }}</h3>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
