@@ -1,6 +1,7 @@
 {
-  "name": "Kimi Theme",
-  "unique_name": "theme_kimi_101",
   "version": "1.0.0",
-  "author": "Ibrahim Aleisa"
+  "theme_name": "Theme One",
+  "repo_url": "https://github.com/Ibrahemaleisa/theme-kimi-101",
+  "support_url": "https://salla.dev"
+  ...
 }
