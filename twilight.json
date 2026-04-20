@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
-  "theme_name": "theme-kimi-101",
+  "theme_name": "Dark",
   "repo_url": "https://github.com/ibrahemaleisa/theme-kimi-101",
-  "support_url": "https://apartment15.com",
+  "support_url": "https://github.com/ibrahemaleisa/theme-kimi-101",
   "settings": [
     {
       "type": "boolean",
