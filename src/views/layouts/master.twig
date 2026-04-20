@@ -1,44 +1,32 @@
-<!doctype html>
-<html lang="{{ language_code }}" dir="{{ language_direction }}">
+<!DOCTYPE html>
+<html lang="{{ shop.language.code }}" dir="{{ shop.language.dir }}">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page_title }}{% if current_page != 1 %} - Page {{ current_page }}{% endif %}{% if not page_title contains store.name %} | {{ store.name }}{% endif %}</title>
-  
-  {% if store.favicon %}
-    <link rel="icon" type="image/png" href="{{ store.favicon }}">
-  {% endif %}
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="{{ asset('styles/theme.css') }}">
-  {{ salla.header }}
-  
-  <style>
-    :root {
-      --color-bg: {{ theme.settings.color_bg|default('#0a0a0a') }};
-      --color-surface: {{ theme.settings.color_surface|default('#141414') }};
-      --color-text: {{ theme.settings.color_text|default('#ffffff') }};
-      --color-text-muted: {{ theme.settings.color_text_muted|default('#888888') }};
-      --color-accent: {{ theme.settings.color_accent|default('#c9a962') }};
-      --color-border: {{ theme.settings.color_border|default('#2a2a2a') }};
-      --font-heading: {{ theme.settings.font_heading|default('Playfair Display') }}, serif;
-      --font-body: {{ theme.settings.font_body|default('Inter') }}, sans-serif;
-    }
-  </style>
+    {{ salla_header }}
+    <style>
+        /* إخفاء أي عناصر إضافية قد تفرضها المنصة */
+        .s-button-wrap, .s-cart-summary { border-radius: 0 !important; }
+    </style>
+    <link rel="stylesheet" href="{{ asset('styles/theme.css') }}">
 </head>
-<body class="template-{{ template }}">
-  {% component 'header' %}
-  
-  <main id="MainContent" class="main-content" role="main">
-    {% block content %}{% endblock %}
-  </main>
-  
-  {% component 'footer' %}
-  
-  <script src="{{ asset('js/theme.js') }}"></script>
-  {{ salla.footer }}
+<body class="bg-[#0a0a0a] text-[#f2f2f2] antialiased selection:bg-white selection:text-black">
+
+    <div id="initial-reveal" class="fixed inset-0 z-[9999] bg-black flex items-center justify-center transition-all duration-[1.5s] ease-in-out">
+        <div class="reveal-content text-center">
+            <h1 class="text-2xl md:text-3xl tracking-[0.5em] font-light uppercase opacity-0 transition-all duration-[2s]" id="brand-name">
+                {{ shop.name }}
+            </h1>
+        </div>
+    </div>
+
+    {% component 'header' %}
+
+    <main class="min-h-screen opacity-0 transition-opacity duration-[2s]" id="site-wrapper">
+        {% block content %}{% endblock %}
+    </main>
+
+    {% component 'footer' %}
+
+    {{ salla_footer }}
+    <script src="{{ asset('js/theme.js') }}"></script>
 </body>
 </html>
