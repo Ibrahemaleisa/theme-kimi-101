@@ -5,72 +5,7 @@
     <style>.site-header { background: #0a0a0a !important; }</style>
   {% endif %}
 
-  <section class="hero" data-animate="fade-up">
-    <div class="hero-bg">
-      {% if component.hero_image %}
-        <img src="{{ component.hero_image }}" alt="" loading="eager" fetchpriority="high">
-      {% endif %}
-      <div class="hero-overlay"></div>
-    </div>
-    <div class="hero-content">
-      <h1 class="hero-title">{{ component.hero_title|default('Define Your Elegance') }}</h1>
-      <p class="hero-subtitle">{{ component.hero_subtitle|default('Curated luxury for the modern connoisseur') }}</p>
-      {% if component.hero_button_link %}
-        <a href="{{ component.hero_button_link }}" class="btn btn-primary btn-large">{{ component.hero_button_text|default('Explore Collection') }}</a>
-      {% endif %}
-    </div>
-  </section>
-
-  <section class="section section-featured" data-animate="fade-up">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Featured Collection</h2>
-        <a href="{{ link('collection') }}" class="section-link">View All</a>
-      </div>
-      <div class="product-grid" data-grid="4">
-        {% for product in products|slice(0, component.limit|default(8)) %}
-          {% include 'components.product.card' with {'product': product} %}
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-categories" data-animate="fade-up">
-    <div class="container">
-      <h2 class="section-title centered">Browse by Category</h2>
-      <div class="category-grid">
-        {% for category in categories|slice(0, 3) %}
-          <a href="{{ category.url }}" class="category-card">
-            <div class="category-image">
-              {% if category.image %}
-                <img src="{{ category.image }}" alt="{{ category.name }}" loading="lazy">
-              {% else %}
-                <div class="category-placeholder"></div>
-              {% endif %}
-            </div>
-            <h3 class="category-title">{{ category.name }}</h3>
-          </a>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-marquee" data-animate="fade-up">
-    <div class="marquee">
-      <div class="marquee-content">
-        <span>{{ component.text_1|default('Free Shipping on Orders Over $500') }}</span>
-        <span class="divider">•</span>
-        <span>{{ component.text_2|default('Authenticity Guaranteed') }}</span>
-        <span class="divider">•</span>
-        <span>{{ component.text_3|default('24/7 Concierge Support') }}</span>
-        <span class="divider">•</span>
-        <span>{{ component.text_1|default('Free Shipping on Orders Over $500') }}</span>
-        <span class="divider">•</span>
-        <span>{{ component.text_2|default('Authenticity Guaranteed') }}</span>
-        <span class="divider">•</span>
-        <span>{{ component.text_3|default('24/7 Concierge Support') }}</span>
-        <span class="divider">•</span>
-      </div>
-    </div>
-  </section>
+  {% for component in page.components %}
+    {% include component.path ignore missing %}
+  {% endfor %}
 {% endblock %}
