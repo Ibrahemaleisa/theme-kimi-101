@@ -1,0 +1,46 @@
+<article class="product-card" data-animate="fade-up" data-delay="{{ forloop.index | times: 100 }}">
+  <a href="{{ product.url }}" class="card-link">
+    <div class="card-image-wrapper">
+      <div class="card-image">
+        {% if product.featured_image %}
+          <img src="{{ product.featured_image | img_url: '600x600', crop: 'center' }}" alt="{{ product.title }}" class="primary-img" loading="lazy">
+          {% if product.images[1] %}
+            <img src="{{ product.images[1] | img_url: '600x600', crop: 'center' }}" alt="{{ product.title }}" class="secondary-img" loading="lazy">
+          {% endif %}
+        {% else %}
+          <div class="placeholder-img"></div>
+        {% endif %}
+      </div>
+      {% if product.compare_at_price > product.price %}
+        <span class="card-badge">Sale</span>
+      {% endif %}
+      {% unless product.available %}
+        <span class="card-badge sold-out">Sold Out</span>
+      {% endunless %}
+      
+      <button type="button" class="quick-add-btn" data-quick-add="{{ product.variants.first.id }}"{% unless product.available %} disabled{% endunless %}>
+        <span class="quick-add-text">Quick Add</span>
+        <span class="quick-add-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M5 12h14"></path>
+          </svg>
+        </span>
+      </button>
+    </div>
+    
+    <div class="card-info">
+      {% if product.vendor %}
+        <span class="card-vendor">{{ product.vendor }}</span>
+      {% endif %}
+      <h3 class="card-title">{{ product.title }}</h3>
+      <div class="card-price">
+        {% if product.compare_at_price > product.price %}
+          <span class="price-sale">{{ product.price | money }}</span>
+          <span class="price-compare">{{ product.compare_at_price | money }}</span>
+        {% else %}
+          <span class="price-regular">{{ product.price | money }}</span>
+        {% endif %}
+      </div>
+    </div>
+  </a>
+</article>
