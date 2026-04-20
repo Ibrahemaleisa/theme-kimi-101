@@ -1,0 +1,42 @@
+{
+  "home": {
+    "hero_title": "Define Your Elegance",
+    "hero_subtitle": "Curated luxury for the modern connoisseur",
+    "explore_collection": "Explore Collection",
+    "featured_products": "Featured Collection",
+    "view_all": "View All",
+    "browse_by_category": "Browse by Category",
+    "add_to_cart": "Add to Cart",
+    "sold_out": "Sold Out",
+    "quick_add": "Quick Add"
+  },
+  "product": {
+    "you_may_also_like": "You May Also Like",
+    "secure_checkout": "Secure Checkout",
+    "authenticity_guaranteed": "Authenticity Guaranteed"
+  },
+  "cart": {
+    "shopping_cart": "Shopping Cart",
+    "order_summary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "total": "Total",
+    "proceed_to_checkout": "Proceed to Checkout",
+    "continue_shopping": "Continue Shopping",
+    "empty_title": "Your cart is empty",
+    "empty_text": "Discover our curated collection of luxury pieces.",
+    "start_shopping": "Start Shopping"
+  },
+  "footer": {
+    "shop": "Shop",
+    "support": "Support",
+    "contact": "Contact",
+    "shipping": "Shipping",
+    "returns": "Returns",
+    "faq": "FAQ",
+    "stay_updated": "Stay Updated",
+    "subscribe_text": "Subscribe for exclusive drops and early access.",
+    "subscribe": "Subscribe",
+    "copyright": "All rights reserved"
+  }
+}
