@@ -1,0 +1,117 @@
+<section class="section section-product">
+  <div class="container">
+    <div class="product-layout" data-product-container>
+      <div class="product-media">
+        <div class="product-gallery" data-gallery>
+          <div class="gallery-main">
+            {% for image in product.images limit: 1 %}
+              <img src="{{ image | img_url: '1200x1200' }}" alt="{{ product.title }}" class="gallery-featured" data-featured-image loading="eager">
+            {% endfor %}
+          </div>
+          {% if product.images.size > 1 %}
+            <div class="gallery-thumbs">
+              {% for image in product.images %}
+                <button class="thumb-btn{% if forloop.first %} active{% endif %}" data-thumb="{{ image | img_url: '1200x1200' }}">
+                  <img src="{{ image | img_url: '200x200', crop: 'center' }}" alt="{{ product.title }} - {{ forloop.index }}" loading="lazy">
+                </button>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      
+      <div class="product-info" data-animate="fade-left">
+        <div class="product-meta">
+          {% if product.vendor %}
+            <span class="product-vendor">{{ product.vendor }}</span>
+          {% endif %}
+          <h1 class="product-title">{{ product.title }}</h1>
+          <div class="product-price">
+            {% if product.compare_at_price > product.price %}
+              <span class="price-sale">{{ product.price | money }}</span>
+              <span class="price-compare">{{ product.compare_at_price | money }}</span>
+              <span class="price-badge">Sale</span>
+            {% else %}
+              <span class="price-regular">{{ product.price | money }}</span>
+            {% endif %}
+          </div>
+        </div>
+        
+        {% if product.description %}
+          <div class="product-description">
+            {{ product.description }}
+          </div>
+        {% endif %}
+        
+        <form class="product-form" action="{{ store.url }}/cart/add" method="post" data-product-form>
+          {% if product.variants.size > 1 %}
+            <div class="product-options">
+              {% for option in product.options_with_values %}
+                <div class="option-group">
+                  <label class="option-label">{{ option.name }}</label>
+                  <div class="option-values">
+                    {% for value in option.values %}
+                      <label class="option-value">
+                        <input type="radio" name="options[{{ option.name }}]" value="{{ value }}"{% if option.selected_value == value %} checked{% endif %}>
+                        <span>{{ value }}</span>
+                      </label>
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+          
+          <div class="product-actions">
+            <div class="quantity-selector">
+              <button type="button" class="qty-btn" data-qty-minus>-</button>
+              <input type="number" name="quantity" value="1" min="1" class="qty-input" data-qty-input>
+              <button type="button" class="qty-btn" data-qty-plus>+</button>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-large btn-full" data-add-to-cart{% unless product.available %} disabled{% endunless %}>
+              {% if product.available %}
+                Add to Cart
+              {% else %}
+                Sold Out
+              {% endif %}
+            </button>
+          </div>
+          
+          <input type="hidden" name="product_id" value="{{ product.id }}">
+          {% if product.variants.size == 1 %}
+            <input type="hidden" name="variant_id" value="{{ product.variants.first.id }}">
+          {% endif %}
+        </form>
+        
+        <div class="product-trust">
+          <div class="trust-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Secure Checkout</span>
+          </div>
+          <div class="trust-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            </svg>
+            <span>Authenticity Guaranteed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if product.related_products.size > 0 %}
+<section class="section section-related">
+  <div class="container">
+    <h2 class="section-title">You May Also Like</h2>
+    <div class="product-grid" data-grid="4">
+      {% for product in product.related_products limit: 4 %}
+        {% render 'product-card', product: product %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

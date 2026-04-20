@@ -1,0 +1,29 @@
+<section class="section section-search">
+  <div class="container">
+    <h1 class="page-title" data-animate="fade-up">Search</h1>
+    
+    <form action="{{ store.url }}/search" method="get" class="search-form" data-animate="fade-up">
+      <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search products..." class="search-input" autofocus>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    
+    {% if search.performed %}
+      {% if search.results.size > 0 %}
+        <p class="search-results-count" data-animate="fade-up">{{ search.results.size }} results for "{{ search.terms }}"</p>
+        
+        <div class="product-grid" data-grid="4">
+          {% for item in search.results %}
+            {% if item.object_type == 'product' %}
+              {% render 'product-card', product: item %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="empty-state" data-animate="fade-up">
+          <p>No results found for "{{ search.terms }}".</p>
+          <a href="{{ store.url }}" class="btn btn-secondary">Back to Home</a>
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+</section>
