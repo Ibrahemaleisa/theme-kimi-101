@@ -1,8 +1,193 @@
 {
-  "name": "Kimi Theme",
-  "unique_name": "theme-kimi-101",
   "version": "1.0.0",
-  "author": "Ibrahim Aleisa",
-  "theme_type": "store",
-  "services": []
+  "theme_name": "theme-kimi-101",
+  "repo_url": "https://github.com/ibrahemaleisa/theme-kimi-101",
+  "support_url": "https://apartment15.com",
+  "settings": [
+    {
+      "type": "boolean",
+      "label": "تفعيل الشريط العلوي الداكن",
+      "id": "topnav_is_dark",
+      "format": "switch",
+      "selected": true
+    },
+    {
+      "type": "string",
+      "label": "لون الخلفية الرئيسي",
+      "id": "color_bg",
+      "format": "color",
+      "value": "#0a0a0a"
+    },
+    {
+      "type": "string",
+      "label": "لون السطح",
+      "id": "color_surface",
+      "format": "color",
+      "value": "#141414"
+    },
+    {
+      "type": "string",
+      "label": "لون النص الرئيسي",
+      "id": "color_text",
+      "format": "color",
+      "value": "#ffffff"
+    },
+    {
+      "type": "string",
+      "label": "لون النص الثانوي",
+      "id": "color_text_muted",
+      "format": "color",
+      "value": "#888888"
+    },
+    {
+      "type": "string",
+      "label": "لون التمييز",
+      "id": "color_accent",
+      "format": "color",
+      "value": "#c9a962"
+    },
+    {
+      "type": "string",
+      "label": "لون الحدود",
+      "id": "color_border",
+      "format": "color",
+      "value": "#2a2a2a"
+    },
+    {
+      "type": "string",
+      "label": "خط العناوين",
+      "id": "font_heading",
+      "format": "text",
+      "value": "Playfair Display"
+    },
+    {
+      "type": "string",
+      "label": "خط النصوص",
+      "id": "font_body",
+      "format": "text",
+      "value": "Inter"
+    },
+    {
+      "type": "string",
+      "id": "placeholder",
+      "format": "hidden",
+      "value": "images/placeholder.png"
+    }
+  ],
+  "features": [
+    "mega-menu",
+    "fonts",
+    "color",
+    "breadcrumb",
+    "component-featured-products",
+    "component-products-slider",
+    "component-testimonials",
+    "component-fixed-banner",
+    "component-photos-slider",
+    "component-store-features",
+    "component-youtube",
+    "filters"
+  ],
+  "components": [
+    {
+      "name": "hero-section",
+      "title": "قسم الهيرو",
+      "icon": "sicon-image",
+      "path": "home.hero-section",
+      "fields": [
+        {
+          "id": "hero_image",
+          "type": "string",
+          "format": "image",
+          "label": "صورة الخلفية"
+        },
+        {
+          "id": "hero_title",
+          "type": "string",
+          "label": "العنوان الرئيسي",
+          "value": "Define Your Elegance"
+        },
+        {
+          "id": "hero_subtitle",
+          "type": "string",
+          "format": "textarea",
+          "label": "العنوان الفرعي",
+          "value": "Curated luxury for the modern connoisseur"
+        },
+        {
+          "id": "hero_button_text",
+          "type": "string",
+          "label": "نص الزر",
+          "value": "Explore Collection"
+        },
+        {
+          "id": "hero_button_link",
+          "type": "string",
+          "format": "url",
+          "label": "رابط الزر"
+        }
+      ]
+    },
+    {
+      "name": "featured-products",
+      "title": "منتجات مميزة",
+      "icon": "sicon-tag",
+      "path": "home.featured-products",
+      "fields": [
+        {
+          "id": "collection",
+          "type": "string",
+          "format": "collection",
+          "label": "التصنيف"
+        },
+        {
+          "id": "limit",
+          "type": "number",
+          "label": "عدد المنتجات",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "name": "categories-grid",
+      "title": "شبكة التصنيفات",
+      "icon": "sicon-grid",
+      "path": "home.categories-grid",
+      "fields": [
+        {
+          "id": "collections",
+          "type": "collection",
+          "format": "collection",
+          "label": "التصنيفات",
+          "maxLength": 3
+        }
+      ]
+    },
+    {
+      "name": "marquee-banner",
+      "title": "شريط متحرك",
+      "icon": "sicon-text",
+      "path": "home.marquee-banner",
+      "fields": [
+        {
+          "id": "text_1",
+          "type": "string",
+          "label": "النص الأول",
+          "value": "Free Shipping on Orders Over $500"
+        },
+        {
+          "id": "text_2",
+          "type": "string",
+          "label": "النص الثاني",
+          "value": "Authenticity Guaranteed"
+        },
+        {
+          "id": "text_3",
+          "type": "string",
+          "label": "النص الثالث",
+          "value": "24/7 Concierge Support"
+        }
+      ]
+    }
+  ]
 }
