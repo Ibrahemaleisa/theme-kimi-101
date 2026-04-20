@@ -1,0 +1,15 @@
+<section class="hero" data-animate="fade-up">
+  <div class="hero-bg">
+    {% if fields.hero_image %}
+      <img src="{{ fields.hero_image }}" alt="" loading="eager" fetchpriority="high">
+    {% endif %}
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <h1 class="hero-title">{{ fields.hero_title|default('Define Your Elegance') }}</h1>
+    <p class="hero-subtitle">{{ fields.hero_subtitle|default('Curated luxury for the modern connoisseur') }}</p>
+    {% if fields.hero_button_link %}
+      <a href="{{ fields.hero_button_link }}" class="btn btn-primary btn-large">{{ fields.hero_button_text|default('Explore Collection') }}</a>
+    {% endif %}
+  </div>
+</section>
