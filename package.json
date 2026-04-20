@@ -1,12 +1,15 @@
 {
-	"name": "theme-kimi-101",
-	"version": "1.0.0",
-	"private": true,
-	"scripts": {
-		"start": "salla theme watch",
-		"build": "salla theme build"
-	},
-	"devDependencies": {
-		"@salla.sa/twilight-cli": "^1.2.0"
-	}
+  "name": "luxury-dark-salla",
+  "version": "1.0.0",
+  "description": "Premium dark luxury theme for Salla",
+  "scripts": {
+    "production": "webpack --mode production",
+    "prod": "webpack --mode production",
+    "development": "webpack --mode development",
+    "watch": "webpack --mode development --watch"
+  },
+  "devDependencies": {
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0"
+  }
 }
