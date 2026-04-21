@@ -1,11 +1,10 @@
-{% extends "layouts.master" %}
+{% extends "layouts/master.twig" %}
 
 {% block content %}
-  {% if theme.settings.topnav_is_dark %}
-    <style>.site-header { background: #0a0a0a !important; }</style>
-  {% endif %}
 
-  {% for component in page.components %}
-    {% include component.path ignore missing %}
-  {% endfor %}
+    {% include 'components/home/hero-section.twig' %}
+    {% include 'components/home/featured-products.twig' %}
+    {% include 'components/home/categories-grid.twig' %}
+    {% include 'components/home/marquee-banner.twig' %}
+
 {% endblock %}
