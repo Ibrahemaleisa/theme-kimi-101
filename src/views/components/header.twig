@@ -1,16 +1,11 @@
-<header class="fixed top-0 w-full z-[100] py-6 px-10 flex justify-between items-center">
-    <div class="flex-1">
-        <button class="uppercase text-[10px] tracking-[0.3em] hover:opacity-50">Menu</button>
-    </div>
-    
-    <div class="flex-1 text-center">
-        <a href="/" class="text-xl tracking-[0.6em] uppercase font-bold">{{ shop.name }}</a>
-    </div>
+<header id="header" class="header">
+    <div class="header-inner">
+        <div class="logo">{{ store.name }}</div>
 
-    <div class="flex-1 text-end space-x-6 rtl:space-x-reverse">
-        <a href="/cart" class="text-[10px] uppercase tracking-[0.2em] relative">
-            Cart 
-            <span class="text-[8px] absolute -top-2 -right-3">({{ cart.items_count }})</span>
-        </a>
+        <nav class="nav">
+            <a href="/">الرئيسية</a>
+            <a href="/collections">المتجر</a>
+            <a href="/cart">السلة</a>
+        </nav>
     </div>
 </header>
