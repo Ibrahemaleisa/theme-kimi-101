@@ -1,76 +1,74 @@
 {
-  "name": "theme-kimi-101",
-  "author": "Kimi Designer",
-  "version": "1.0.0",
-  "description": "High-End Luxury Streetwear Theme",
+  "name": {
+    "ar": "ثيم كيمي 101",
+    "en": "Theme Kimi 101"
+  },
+  "repository": "https://github.com/ibrahemaleisa/theme-kimi-101",
+  "author_email": "ibrahemaleisa05@gmail.com",
+  "description": {
+    "ar": "تصميم فاخر وعصري لملابس الستريت وير",
+    "en": "Luxury Streetwear Premium Theme"
+  },
   "theme_type": "store",
-  "main": "src/views/layouts/master.twig",
-  "locales": [
-    "ar",
-    "en"
-  ],
+  "version": "1.0.0",
+  "locales": ["ar", "en"],
   "services": [
     "products",
     "categories",
     "cart",
     "orders",
-    "customer",
-    "brands",
-    "reviews"
+    "customer"
+  ],
+  "features": [
+    "fonts",
+    "color",
+    "component-featured-products",
+    "component-fixed-banner"
+  ],
+  "settings": [
+    {
+      "id": "color_bg",
+      "type": "string",
+      "format": "color",
+      "label": "Background Color",
+      "value": "#000000"
+    },
+    {
+      "id": "placeholder",
+      "type": "string",
+      "format": "hidden",
+      "value": "images/placeholder.png"
+    }
   ],
   "components": [
     {
-      "name": "header",
-      "path": "src/views/components/header.twig"
+      "key": "hero-section-kimi",
+      "title": { "ar": "قسم الهيرو", "en": "Hero Section" },
+      "path": "home.hero-section",
+      "fields": [
+        { "id": "hero_title", "type": "string", "format": "text", "label": "Headline", "multilanguage": true },
+        { "id": "hero_subtitle", "type": "string", "format": "text", "label": "Subtitle", "multilanguage": true },
+        { "id": "hero_image", "type": "string", "format": "image", "label": "Banner Image" }
+      ]
     },
     {
-      "name": "footer",
-      "path": "src/views/components/footer.twig"
+      "key": "marquee-kimi",
+      "title": { "ar": "الشريط المتحرك", "en": "Marquee Banner" },
+      "path": "home.marquee-banner",
+      "fields": []
     },
     {
-      "name": "hero-section",
-      "path": "src/views/components/home/hero-section.twig"
+      "key": "categories-grid-kimi",
+      "title": { "ar": "شبكة التصنيفات", "en": "Categories Grid" },
+      "path": "home.categories-grid",
+      "fields": []
     },
     {
-      "name": "marquee-banner",
-      "path": "src/views/components/home/marquee-banner.twig"
-    },
-    {
-      "name": "categories-grid",
-      "path": "src/views/components/home/categories-grid.twig"
-    },
-    {
-      "name": "featured-products",
-      "path": "src/views/components/home/featured-products.twig"
-    },
-    {
-      "name": "product-card",
-      "path": "src/views/components/product/card.twig"
+      "key": "featured-products-kimi",
+      "title": { "ar": "المنتجات المميزة", "en": "Featured Products" },
+      "path": "home.featured-products",
+      "fields": []
     }
   ],
-  "settings": {
-    "sections": [
-      {
-        "id": "main_hero",
-        "name": "القسم الرئيسي",
-        "fields": [
-          {
-            "id": "hero_title",
-            "type": "text",
-            "label": "العنوان الرئيسي"
-          },
-          {
-            "id": "hero_subtitle",
-            "type": "text",
-            "label": "العنوان الفرعي"
-          },
-          {
-            "id": "hero_image",
-            "type": "image",
-            "label": "صورة الغلاف"
-          }
-        ]
-      }
-    ]
-  }
+  "support_url": "https://github.com/ibrahemaleisa/theme-kimi-101"
 }
