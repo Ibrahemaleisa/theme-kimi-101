@@ -1,0 +1,58 @@
+{# 
+  Page: Collection / Category
+  Path: src/views/pages/collection.twig
+#}
+{% extends "layouts.master" %}
+
+{% block content %}
+<div class="container mx-auto px-6 pt-40 pb-20">
+    {# Category Header #}
+    <div class="flex flex-col items-center mb-24 space-y-4">
+        <span class="text-[9px] tracking-[0.6em] uppercase text-gray-500">Collection</span>
+        <h1 class="text-3xl md:text-5xl font-extralight tracking-[0.3em] uppercase italic">
+            {{ category.name }}
+        </h1>
+        {% if category.description %}
+            <p class="max-w-xl text-center text-xs text-gray-500 font-light tracking-widest leading-relaxed pt-4">
+                {{ category.description | raw }}
+            </p>
+        {% endif %}
+    </div>
+
+    {# Toolbar (Filter/Sort) #}
+    <div class="flex justify-between items-center border-b border-[#1a1a1a] pb-6 mb-12">
+        <div class="flex items-center space-x-4">
+            <span class="text-[10px] tracking-widest uppercase text-gray-400">
+                {{ products | length }} Pieces
+            </span>
+        </div>
+        
+        {# Salla Sorting Component #}
+        <div class="relative group">
+            <button class="text-[10px] tracking-widest uppercase flex items-center space-x-2">
+                <span>Sort By</span>
+                <i class="salla-icon salla-icon-chevron-down text-[8px]"></i>
+            </button>
+            {# تظهر قائمة الفرز هنا #}
+        </div>
+    </div>
+
+    {# Products Grid #}
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-16 md:gap-x-8 md:gap-y-24">
+        {% for product in products %}
+            {% component 'product-card' with { 'product': product } %}
+        {% else %}
+            <div class="col-span-full py-20 text-center">
+                <p class="text-[10px] tracking-[0.5em] uppercase text-gray-600">No items found in this collection.</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    {# Pagination #}
+    {% if products.has_pages %}
+        <div class="mt-32 flex justify-center border-t border-[#1a1a1a] pt-12">
+            {{ products.links | raw }}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
