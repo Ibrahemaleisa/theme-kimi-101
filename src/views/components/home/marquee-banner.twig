@@ -1,18 +1,23 @@
-<section class="section section-marquee" data-animate="fade-up">
-  <div class="marquee">
-    <div class="marquee-content">
-      <span>{{ fields.text_1|default('Free Shipping on Orders Over $500') }}</span>
-      <span class="divider">•</span>
-      <span>{{ fields.text_2|default('Authenticity Guaranteed') }}</span>
-      <span class="divider">•</span>
-      <span>{{ fields.text_3|default('24/7 Concierge Support') }}</span>
-      <span class="divider">•</span>
-      <span>{{ fields.text_1|default('Free Shipping on Orders Over $500') }}</span>
-      <span class="divider">•</span>
-      <span>{{ fields.text_2|default('Authenticity Guaranteed') }}</span>
-      <span class="divider">•</span>
-      <span>{{ fields.text_3|default('24/7 Concierge Support') }}</span>
-      <span class="divider">•</span>
+{# 
+  Component: Marquee Banner
+  Style: Minimal/Text-Based
+#}
+<div class="py-6 border-y border-[#1a1a1a] bg-black overflow-hidden flex">
+    <div class="flex whitespace-nowrap animate-marquee">
+        {% for i in 1..10 %}
+            <span class="text-[10px] md:text-xs tracking-[0.5em] uppercase font-light mx-8 text-white/40">
+                New Era of Streetwear &mdash; Worldwide Shipping &mdash; Limited Drops Only &mdash;
+            </span>
+        {% endfor %}
     </div>
-  </div>
-</section>
+</div>
+
+<style>
+    .animate-marquee {
+        animation: marquee 40s linear infinite;
+    }
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+</style>
