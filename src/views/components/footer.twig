@@ -1,10 +1,51 @@
-<footer class="footer">
-    <div class="footer-inner">
-        <p>© {{ "now"|date("Y") }} {{ store.name }}</p>
+{# 
+  Component: Footer
+  Style: Clean Minimal
+#}
+<footer class="bg-black pt-32 pb-12 px-6 md:px-12 border-t border-[#1a1a1a]">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
+            
+            {# Brand Info #}
+            <div class="space-y-6">
+                <h2 class="text-sm tracking-[0.4em] uppercase font-medium">{{ shop.name }}</h2>
+                <p class="text-gray-500 text-xs leading-relaxed max-w-xs font-light tracking-wide">
+                    {{ shop.description | default('Defined by minimalist aesthetics and luxury street culture.') }}
+                </p>
+            </div>
 
-        <div class="socials">
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
+            {# Quick Links #}
+            <div class="flex flex-col space-y-4">
+                <h3 class="text-[10px] tracking-[0.5em] uppercase text-gray-600 mb-2">Customer Care</h3>
+                <a href="{{ url('/contact') }}" class="text-xs font-light hover:text-gray-400 transition-colors">Contact Us</a>
+                <a href="{{ url('/shipping-and-delivery') }}" class="text-xs font-light hover:text-gray-400 transition-colors">Shipping</a>
+                <a href="{{ url('/privacy-policy') }}" class="text-xs font-light hover:text-gray-400 transition-colors">Privacy</a>
+            </div>
+
+            {# Social #}
+            <div class="flex flex-col space-y-4">
+                <h3 class="text-[10px] tracking-[0.5em] uppercase text-gray-600 mb-2">Follow Us</h3>
+                <div class="flex space-x-6">
+                    {% for social in shop.social %}
+                        <a href="{{ social.url }}" target="_blank" class="text-xs font-light hover:text-gray-400 transition-colors uppercase tracking-widest">
+                            {{ social.name }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        {# Copyright #}
+        <div class="mt-32 pt-8 border-t border-[#1a1a1a] flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p class="text-[9px] tracking-[0.2em] text-gray-600 uppercase">
+                &copy; {{ "now"|date("Y") }} {{ shop.name }}. All Rights Reserved.
+            </p>
+            <div class="flex space-x-4 opacity-30 grayscale hover:grayscale-0 transition-all">
+                {# رموز الدفع - سلة توفرها تلقائياً، هنا نضع حاوية لها #}
+                <img src="https://cdn.salla.sa/cp/assets/images/payments/visa.png" class="h-3" alt="visa">
+                <img src="https://cdn.salla.sa/cp/assets/images/payments/mastercard.png" class="h-3" alt="mastercard">
+                <img src="https://cdn.salla.sa/cp/assets/images/payments/mada.png" class="h-3" alt="mada">
+            </div>
         </div>
     </div>
 </footer>
