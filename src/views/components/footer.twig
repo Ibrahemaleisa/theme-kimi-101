@@ -1,18 +1,10 @@
-<footer class="py-20 border-t border-[#1a1a1a] mt-20">
-    <div class="max-w-7xl mx-auto px-10 grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div>
-            <h4 class="text-[10px] uppercase tracking-[0.4em] mb-6 text-gray-500">Inquiries</h4>
-            <p class="text-sm">studio@yourbrand.com</p>
+<footer class="footer">
+    <div class="footer-inner">
+        <p>© {{ "now"|date("Y") }} {{ store.name }}</p>
+
+        <div class="socials">
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
         </div>
-        <div class="md:text-end">
-            <h4 class="text-[10px] uppercase tracking-[0.4em] mb-6 text-gray-500">Legal</h4>
-            <div class="space-x-4 rtl:space-x-reverse text-xs uppercase tracking-widest">
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-            </div>
-        </div>
-    </div>
-    <div class="text-center mt-20 opacity-20 text-[9px] tracking-[0.8em] uppercase">
-        &copy; {{ "now"|date("Y") }} {{ shop.name }}
     </div>
 </footer>
