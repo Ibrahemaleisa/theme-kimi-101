@@ -1,10 +1,43 @@
-{% extends "layouts/master.twig" %}
+{# 
+  Page: Index (Home)
+  Path: src/views/pages/index.twig
+#}
+{% extends "layouts.master" %}
 
 {% block content %}
+    {# 1. Hero Section Section #}
+    {% component 'hero-section' %}
 
-    {% include 'components/home/hero-section.twig' %}
-    {% include 'components/home/featured-products.twig' %}
-    {% include 'components/home/categories-grid.twig' %}
-    {% include 'components/home/marquee-banner.twig' %}
+    {# 2. Dynamic Marquee #}
+    {% component 'marquee-banner' %}
 
+    {# 3. Main Store Content #}
+    <div class="container mx-auto px-6 py-32 space-y-40">
+        
+        {# Section: Categories #}
+        <div class="space-y-12">
+            <div class="flex flex-col items-center text-center space-y-4 mb-20">
+                <span class="text-[9px] tracking-[0.6em] uppercase text-gray-600">The Catalog</span>
+                <h2 class="text-xl font-light tracking-[0.4em] uppercase">Browse by Genre</h2>
+            </div>
+            {% component 'categories-grid' %}
+        </div>
+
+        {# Section: Latest Drops #}
+        <div class="space-y-16">
+            <div class="flex justify-between items-end border-b border-[#1a1a1a] pb-6">
+                <div>
+                    <span class="text-[9px] tracking-[0.6em] uppercase text-gray-600">Season 01</span>
+                    <h2 class="text-xl font-light tracking-[0.4em] uppercase mt-2">Latest Drops</h2>
+                </div>
+                <a href="{{ url('/products') }}" class="text-[9px] tracking-[0.3em] uppercase hover:text-gray-400 transition-colors">
+                    View All ({{ products | length }})
+                </a>
+            </div>
+            
+            {# المنتجات المميزة #}
+            {% component 'featured-products' %}
+        </div>
+
+    </div>
 {% endblock %}
