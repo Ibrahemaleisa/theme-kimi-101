@@ -1,42 +1,15 @@
 {
-  "home": {
-    "hero_title": "عزّز أناقتك",
-    "hero_subtitle": "مجموعة فاخرة مختارة للعميل المميز",
-    "explore_collection": "استكشف المجموعة",
-    "featured_products": "منتجات مميزة",
+  "common": {
+    "cart": "سلة التسوق",
+    "search": "بحث",
+    "latest_drops": "أحدث الإصدارات",
     "view_all": "عرض الكل",
-    "browse_by_category": "تصفح حسب التصنيف",
-    "add_to_cart": "أضف إلى السلة",
-    "sold_out": "نفذت الكمية",
-    "quick_add": "إضافة سريعة"
+    "add_to_cart": "إضافة للسلة",
+    "out_of_stock": "نفدت الكمية"
   },
   "product": {
-    "you_may_also_like": "قد يعجبك أيضاً",
-    "secure_checkout": "دفع آمن",
-    "authenticity_guaranteed": "ضمان الأصالة"
-  },
-  "cart": {
-    "shopping_cart": "سلة التسوق",
-    "order_summary": "ملخص الطلب",
-    "subtotal": "المجموع الفرعي",
-    "shipping": "الشحن",
-    "total": "الإجمالي",
-    "proceed_to_checkout": "إتمام الشراء",
-    "continue_shopping": "مواصلة التسوق",
-    "empty_title": "سلتك فارغة",
-    "empty_text": "اكتشف مجموعتنا المختارة من القطع الفاخرة.",
-    "start_shopping": "ابدأ التسوق"
-  },
-  "footer": {
-    "shop": "المتجر",
-    "support": "الدعم",
-    "contact": "تواصل معنا",
-    "shipping": "الشحن",
-    "returns": "الإرجاع",
-    "faq": "الأسئلة الشائعة",
-    "stay_updated": "تابعنا",
-    "subscribe_text": "اشترك للحصول على الإصدارات الحصرية والوصول المبكر.",
-    "subscribe": "اشترك",
-    "copyright": "جميع الحقوق محفوظة"
+    "price": "السعر",
+    "description": "الوصف",
+    "related_products": "منتجات قد تعجبك"
   }
 }
