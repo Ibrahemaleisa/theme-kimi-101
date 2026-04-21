@@ -1,13 +1,9 @@
-<section class="section section-featured" data-animate="fade-up">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Featured Collection</h2>
-      <a href="{{ link('collection') }}" class="section-link">View All</a>
+<section class="products">
+    <div class="grid">
+
+        {% for product in products %}
+            {% include 'components/product/card.twig' %}
+        {% endfor %}
+
     </div>
-    <div class="product-grid" data-grid="4">
-      {% for product in products|slice(0, fields.limit|default(8)) %}
-        {% include 'components.product.card' with {'product': product} %}
-      {% endfor %}
-    </div>
-  </div>
 </section>
