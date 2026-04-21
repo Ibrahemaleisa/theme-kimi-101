@@ -5,7 +5,10 @@
   "description": "High-End Luxury Streetwear Theme",
   "theme_type": "store",
   "main": "src/views/layouts/master.twig",
-  "locales": ["ar", "en"],
+  "locales": [
+    "ar",
+    "en"
+  ],
   "services": [
     "products",
     "categories",
@@ -16,13 +19,34 @@
     "reviews"
   ],
   "components": [
-    { "name": "header", "path": "src/views/components/header.twig" },
-    { "name": "footer", "path": "src/views/components/footer.twig" },
-    { "name": "hero-section", "path": "src/views/components/home/hero-section.twig" },
-    { "name": "marquee-banner", "path": "src/views/components/home/marquee-banner.twig" },
-    { "name": "categories-grid", "path": "src/views/components/home/categories-grid.twig" },
-    { "name": "featured-products", "path": "src/views/components/home/featured-products.twig" },
-    { "name": "product-card", "path": "src/views/components/product/card.twig" }
+    {
+      "name": "header",
+      "path": "src/views/components/header.twig"
+    },
+    {
+      "name": "footer",
+      "path": "src/views/components/footer.twig"
+    },
+    {
+      "name": "hero-section",
+      "path": "src/views/components/home/hero-section.twig"
+    },
+    {
+      "name": "marquee-banner",
+      "path": "src/views/components/home/marquee-banner.twig"
+    },
+    {
+      "name": "categories-grid",
+      "path": "src/views/components/home/categories-grid.twig"
+    },
+    {
+      "name": "featured-products",
+      "path": "src/views/components/home/featured-products.twig"
+    },
+    {
+      "name": "product-card",
+      "path": "src/views/components/product/card.twig"
+    }
   ],
   "settings": {
     "sections": [
@@ -30,9 +54,21 @@
         "id": "main_hero",
         "name": "القسم الرئيسي",
         "fields": [
-          { "id": "hero_title", "type": "text", "label": "العنوان الرئيسي" },
-          { "id": "hero_subtitle", "type": "text", "label": "العنوان الفرعي" },
-          { "id": "hero_image", "type": "image", "label": "صورة الغلاف" }
+          {
+            "id": "hero_title",
+            "type": "text",
+            "label": "العنوان الرئيسي"
+          },
+          {
+            "id": "hero_subtitle",
+            "type": "text",
+            "label": "العنوان الفرعي"
+          },
+          {
+            "id": "hero_image",
+            "type": "image",
+            "label": "صورة الغلاف"
+          }
         ]
       }
     ]
