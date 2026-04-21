@@ -1,8 +1,62 @@
-<div class="product-card">
-    <img src="{{ product.image }}" alt="{{ product.name }}">
+{# 
+  Component: Product Card
+  Style: Luxury Streetwear (Minimal/No-border)
+#}
+<div class="product-card group cursor-pointer relative" data-product-id="{{ product.id }}">
+    
+    {# Product Image Wrapper #}
+    <div class="product-image-wrapper relative aspect-[3/4] overflow-hidden bg-[#0d0d0d]">
+        <a href="{{ product.url }}" class="block w-full h-full">
+            <img src="{{ product.image.url }}" 
+                 alt="{{ product.image.alt }}" 
+                 loading="lazy"
+                 class="w-full h-full object-cover transition-transform duration-[1.5s] cubic-bezier(0.19, 1, 0.22, 1) group-hover:scale-110">
+        </a>
 
-    <div class="product-info">
-        <h3>{{ product.name }}</h3>
-        <span>{{ product.price }}</span>
+        {# Badges (New, Sale, Out of Stock) #}
+        {% if not product.can_buy %}
+            <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 border border-white/10">
+                <span class="text-[8px] tracking-[0.2em] uppercase text-white font-light">Sold Out</span>
+            </div>
+        {% elseif product.on_sale %}
+            <div class="absolute top-4 left-4 bg-white px-3 py-1">
+                <span class="text-[8px] tracking-[0.2em] uppercase text-black font-bold">Sale</span>
+            </div>
+        {% endif %}
+
+        {# Quick Add Button (Visible on Hover Desktop / Always on Mobile) #}
+        <button onclick="salla.cart.addItem({id: {{ product.id }}})" 
+                class="absolute bottom-0 left-0 w-full bg-white text-black py-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10 hidden md:block">
+            <span class="text-[9px] tracking-[0.3em] uppercase font-medium">Add to Cart</span>
+        </button>
+    </div>
+
+    {# Product Info #}
+    <div class="mt-6 space-y-2">
+        <div class="flex justify-between items-start">
+            <div class="flex flex-col">
+                <a href="{{ product.url }}" class="text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light text-gray-300 hover:text-white transition-colors">
+                    {{ product.name }}
+                </a>
+                <span class="text-[9px] tracking-[0.1em] text-gray-600 mt-1 uppercase">{{ product.category.name }}</span>
+            </div>
+            
+            <div class="flex flex-col items-end">
+                <span class="text-[10px] md:text-[11px] font-medium tracking-tighter">
+                    {{ product.price | money }}
+                </span>
+                {% if product.on_sale %}
+                    <span class="text-[9px] text-gray-600 line-through">
+                        {{ product.regular_price | money }}
+                    </span>
+                {% endif %}
+            </div>
+        </div>
+
+        {# Mobile Only: Quick Add #}
+        <button onclick="salla.cart.addItem({id: {{ product.id }}})" 
+                class="w-full border border-[#1a1a1a] py-3 mt-2 md:hidden active:bg-white active:text-black transition-all">
+            <span class="text-[8px] tracking-[0.3em] uppercase">Quick Add +</span>
+        </button>
     </div>
 </div>
