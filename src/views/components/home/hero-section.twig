@@ -1,6 +1,57 @@
-<section class="hero">
-    <div class="hero-content">
-        <h1>New Collection</h1>
-        <p>Minimal. Clean. Powerful.</p>
+{# 
+  Component: Hero Section
+  Style: Luxury Streetwear High-Impact
+#}
+<section class="relative h-[90vh] w-full overflow-hidden bg-black">
+    {# Background Image with Overlay #}
+    <div class="absolute inset-0">
+        {% if shop.settings.main_hero.hero_image %}
+            <img src="{{ shop.settings.main_hero.hero_image }}" 
+                 class="w-full h-full object-cover opacity-60 scale-105 animate-slow-zoom" 
+                 alt="Hero Collection">
+        {% else %}
+            {# Placeholder for development #}
+            <div class="w-full h-full bg-[#0d0d0d] flex items-center justify-center">
+                <span class="text-[10px] tracking-[1em] text-gray-800 uppercase">Premium Collection</span>
+            </div>
+        {% endif %}
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+    </div>
+
+    {# Content #}
+    <div class="relative h-full flex flex-col items-center justify-center text-center px-6">
+        <h2 class="text-[10px] md:text-xs tracking-[0.8em] uppercase font-light text-gray-400 mb-4 animate-fade-up">
+            {{ shop.settings.main_hero.hero_subtitle | default('Limited Release') }}
+        </h2>
+        <h1 class="text-3xl md:text-6xl font-extralight tracking-[0.4em] uppercase mb-10 animate-fade-up-delayed">
+            {{ shop.settings.main_hero.hero_title | default('Season 01') }}
+        </h1>
+        
+        <a href="{{ url('/products') }}" 
+           class="group relative px-12 py-4 border border-white/20 hover:border-white transition-all duration-700 animate-fade-up-long">
+            <span class="text-[10px] tracking-[0.4em] uppercase font-light relative z-10">Shop Collection</span>
+            <div class="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+            <span class="absolute inset-0 flex items-center justify-center text-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 text-[10px] tracking-[0.4em] uppercase">Shop Collection</span>
+        </a>
+    </div>
+
+    {# Scroll Indicator #}
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 opacity-30">
+        <span class="text-[8px] tracking-[0.3em] uppercase rotate-90 mb-4">Scroll</span>
+        <div class="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
     </div>
 </section>
+
+<style>
+    .animate-slow-zoom { animation: slowZoom 20s infinite alternate; }
+    @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
+    
+    .animate-fade-up { animation: fadeUp 1.5s ease forwards; opacity: 0; }
+    .animate-fade-up-delayed { animation: fadeUp 1.5s ease 0.3s forwards; opacity: 0; }
+    .animate-fade-up-long { animation: fadeUp 1.5s ease 0.6s forwards; opacity: 0; }
+
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
